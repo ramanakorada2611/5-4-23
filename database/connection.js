@@ -4,8 +4,8 @@ const client = new MongoClient(url);
 const findAllFromDb = async (query,collectionName) => {
     try {
         await client.connect();
-        console.log("Connection to db is successful")
-        const database = client.db("data-backend");
+        console.log("Connection to db is successful")   
+        const database = client.db("dataForFrontend");
         const collection = database.collection(collectionName)
         const dbResponse = await collection.find(query).toArray();
         // console.log("db res",dbResponse)
